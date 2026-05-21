@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão Escolar de Alta Performance - Consultoria Pedagógica</title>
+    <title>Gestão Escolar de Alta Performance - Acompanhamento Estratégico Premium</title>
+    <link rel="icon" type="image/png" href="https://imgur.com/csmg7AA.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,788 +18,1497 @@
         :root {
             --marrom-escuro: #2e1f12;
             --marrom-claro: #734e31;
+            --bege: #e7cfb8;
             --creme: #f5f1ed;
             --branco: #ffffff;
+            --cinza: #6b6b6b;
+            --vinho: #4a2c3e;
+            --ouro: #d4af37;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--creme);
             color: var(--marrom-escuro);
-            background-color: var(--branco);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* HEADER */
         header {
-            background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom-claro) 100%);
-            padding: 20px 40px;
-            position: sticky;
+            position: fixed;
             top: 0;
+            width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(46, 31, 18, 0.1);
+            background: rgba(245, 241, 237, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(231, 207, 184, 0.25);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(46, 31, 18, 0.08);
         }
 
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-section {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 1rem;
         }
 
-        .logo-section img {
-            height: 120px;
+        .logo-image {
+            height: 50px;
             width: auto;
-            object-fit: contain;
+            display: block;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
         }
 
-        .header-title {
-            color: var(--branco);
-            font-size: 24px;
-            font-weight: 700;
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            color: var(--marrom-escuro);
             line-height: 1.2;
         }
 
-        .header-title span {
-            display: block;
-            font-size: 14px;
-            font-weight: 400;
-            margin-top: 5px;
-            opacity: 0.95;
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--marrom-claro);
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            margin-top: 0.1rem;
         }
 
-        .cta-button {
-            background-color: var(--creme);
+        nav a {
             color: var(--marrom-escuro);
-            border: none;
-            padding: 12px 28px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
+            margin-left: 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .cta-button:hover {
-            background-color: var(--branco);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(46, 31, 18, 0.2);
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--marrom-claro);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--marrom-claro);
         }
 
         /* HERO */
         .hero {
-            background: linear-gradient(135deg, var(--marrom-claro) 0%, var(--marrom-escuro) 100%);
-            color: var(--branco);
-            padding: 100px 40px;
-            text-align: center;
+            margin-top: 70px;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 3.5rem;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--creme) 0%, #f9f7f4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -8%;
+            right: -5%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(231, 207, 184, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.1;
+            color: var(--marrom-escuro);
+            margin-bottom: 1.8rem;
+            letter-spacing: -1px;
         }
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            line-height: 1.5;
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--cinza);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            line-height: 1.85;
+            max-width: 580px;
         }
 
-        /* SEÇÕES */
-        section {
-            padding: 80px 40px;
+        .hero-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 3rem 0;
+            padding: 2.2rem 0;
+            border-top: 1px solid rgba(90, 31, 61, 0.15);
+            border-bottom: 1px solid rgba(90, 31, 61, 0.15);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            font-size: 1.05rem;
+            color: var(--marrom-escuro);
+            font-weight: 500;
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: var(--marrom-claro);
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .hero-proof {
+            font-size: 0.95rem;
+            color: var(--cinza);
+            font-style: italic;
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background: rgba(231, 207, 184, 0.15);
+            border-left: 3px solid var(--marrom-claro);
+            border-radius: 2px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn-primary {
+            padding: 1.1rem 2.8rem;
+            background: var(--marrom-escuro);
+            color: var(--branco);
+            border: none;
+            border-radius: 3px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 10px 35px rgba(46, 31, 18, 0.18);
+        }
+
+        .btn-primary:hover {
+            background: var(--marrom-claro);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 50px rgba(46, 31, 18, 0.28);
+        }
+
+        .btn-secondary {
+            padding: 1.1rem 2.8rem;
+            background: transparent;
+            color: var(--marrom-escuro);
+            border: 2px solid var(--marrom-escuro);
+            border-radius: 3px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--marrom-escuro);
+            color: var(--branco);
+            transform: translateY(-4px);
+        }
+
+        .hero-foto {
+            position: relative;
+            z-index: 2;
+            perspective: 1000px;
+        }
+
+        .hero-foto img {
+            width: 100%;
+            max-width: 520px;
+            border-radius: 8px;
+            box-shadow: 0 25px 70px rgba(46, 31, 18, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .hero-foto img:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 90px rgba(46, 31, 18, 0.25);
+        }
+
+        /* ANIMAÇÃO HERO */
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-content {
+            animation: slideInRight 0.9s ease forwards;
+        }
+
+        .hero-foto {
+            animation: slideInRight 0.9s ease 0.15s forwards;
+            opacity: 0;
+        }
+
+        /* COMO FUNCIONA */
+        .como-funciona {
+            padding: 7rem 2rem;
+            background: linear-gradient(180deg, var(--branco) 0%, #faf9f7 100%);
+            position: relative;
+        }
+
+        .como-funciona::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(231, 207, 184, 0.4), transparent);
+        }
+
+        .section-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 50px;
-            text-align: center;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            font-weight: 600;
             color: var(--marrom-escuro);
-            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
         }
 
-        /* SEÇÃO DOR */
-        .secao-dor {
-            background-color: var(--creme);
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: var(--cinza);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.8;
         }
 
-        .cards-grid {
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(115, 78, 49, 0.2), rgba(115, 78, 49, 0.05));
+        }
+
+        .timeline-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3.5rem;
+            position: relative;
+            z-index: 2;
         }
 
-        .card {
+        .timeline-item {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(231, 207, 184, 0.3);
+            border-radius: 4px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
             background: var(--branco);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(46, 31, 18, 0.08);
+            border: 3px solid var(--marrom-claro);
+            border-radius: 50%;
+            left: 50%;
+            top: -32px;
+            transform: translateX(-50%);
+            z-index: 10;
             transition: all 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(46, 31, 18, 0.15);
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: var(--marrom-claro);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(46, 31, 18, 0.08);
         }
 
-        .card-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
+        .timeline-item:hover::before {
+            background: var(--marrom-claro);
+            box-shadow: 0 0 0 6px rgba(115, 78, 49, 0.1);
         }
 
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--marrom-escuro);
-        }
-
-        .card p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* SEÇÃO SOLUÇÃO */
-        .secao-solucao {
-            background-color: var(--branco);
-        }
-
-        .solucao-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .solucao-item {
-            text-align: center;
-        }
-
-        .solucao-numero {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--marrom-escuro), var(--marrom-claro));
-            color: var(--branco);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
+        .timeline-numero {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            color: var(--marrom-claro);
+            margin-bottom: 0.8rem;
+            opacity: 0.4;
         }
 
-        .solucao-item h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+        .timeline-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
             color: var(--marrom-escuro);
         }
 
-        .solucao-item p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
+        .timeline-item p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--cinza);
         }
 
-        /* SEÇÃO QUEM EU SOU */
-        .secao-quem-sou {
-            background-color: var(--creme);
+        /* DOR */
+        .dor {
+            padding: 7rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .quem-sou-content {
+        .dor-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .dor-card {
+            background: var(--branco);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(46, 31, 18, 0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--marrom-claro);
+            transition: height 0.4s ease;
+        }
+
+        .dor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(46, 31, 18, 0.12);
+            border-color: var(--marrom-claro);
+        }
+
+        .dor-card:hover::before {
+            height: 100%;
+        }
+
+        .dor-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .dor-card h3 {
+            font-size: 1.5rem;
+            color: var(--marrom-escuro);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .dor-card p {
+            font-size: 1.05rem;
+            color: var(--cinza);
+            line-height: 1.75;
+        }
+
+        /* QUEM SOU */
+        .quem-sou {
+            padding: 7rem 2rem;
+            background: linear-gradient(180deg, var(--creme) 0%, #faf9f7 100%);
+            position: relative;
+        }
+
+        .quem-sou::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(231, 207, 184, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .quem-sou-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quem-sou-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         .quem-sou-foto img {
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(46, 31, 18, 0.15);
+            border-radius: 6px;
+            box-shadow: 0 25px 65px rgba(46, 31, 18, 0.18);
+            transition: all 0.4s ease;
         }
 
-        .quem-sou-texto h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
+        .quem-sou-foto img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 85px rgba(46, 31, 18, 0.22);
+        }
+
+        .quem-sou-texto h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
             color: var(--marrom-escuro);
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
         }
 
         .quem-sou-texto p {
-            font-size: 16px;
-            margin-bottom: 15px;
-            line-height: 1.8;
-            color: #555;
+            font-size: 1.15rem;
+            color: var(--cinza);
+            line-height: 2;
+            margin-bottom: 1.8rem;
+            font-weight: 300;
         }
 
-        .credenciais {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 2px solid var(--marrom-claro);
+        .expertise-list {
+            margin: 2.5rem 0;
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--bege);
+            border-bottom: 1px solid var(--bege);
         }
 
-        .credenciais p {
-            font-weight: 600;
+        .expertise-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.3rem;
+            font-size: 1.1rem;
             color: var(--marrom-escuro);
-            margin-bottom: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        /* SEÇÃO BENEFÍCIOS */
-        .secao-beneficios {
-            background-color: var(--branco);
+        .expertise-item::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: var(--marrom-claro);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-item:hover::before {
+            width: 10px;
+            height: 10px;
+            background: var(--vinho);
+        }
+
+        /* BENEFÍCIOS */
+        .beneficios {
+            padding: 7rem 2rem;
+            background: var(--creme);
+        }
+
+        .beneficios .section-container {
+            max-width: 1200px;
         }
 
         .beneficios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.2rem;
         }
 
-        .beneficio-item {
-            padding: 25px;
-            background: linear-gradient(135deg, rgba(46, 31, 18, 0.05), rgba(115, 78, 49, 0.05));
-            border-left: 4px solid var(--marrom-claro);
+        .beneficio-card {
+            background: var(--branco);
+            padding: 2.8rem 2rem;
             border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--bege);
+            transition: all 0.4s ease;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
         }
 
-        .beneficio-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
+        .beneficio-card:hover {
+            border-color: var(--marrom-claro);
+            box-shadow: 0 12px 32px rgba(46, 31, 18, 0.12);
+            transform: translateY(-6px);
+        }
+
+        .beneficio-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .beneficio-card:hover .beneficio-icon {
+            transform: scale(1.15);
+        }
+
+        .beneficio-card h3 {
+            font-size: 1.35rem;
             color: var(--marrom-escuro);
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .beneficio-item p {
-            font-size: 14px;
-            color: #666;
+        .beneficio-card p {
+            font-size: 0.95rem;
+            color: var(--cinza);
+            line-height: 1.7;
         }
 
-        /* SEÇÃO TRANSFORMAÇÃO */
-        .secao-transformacao {
-            background-color: var(--creme);
-        }
-
-        .transformacao-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .transformacao-coluna h3 {
-            font-size: 24px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--marrom-claro);
-        }
-
-        .transformacao-coluna.antes h3 {
-            color: #d9534f;
-        }
-
-        .transformacao-coluna.depois h3 {
-            color: #5cb85c;
-        }
-
-        .transformacao-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .transformacao-item span {
-            font-size: 24px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        /* SEÇÃO FAQ */
-        .secao-faq {
-            background-color: var(--branco);
+        /* FAQ */
+        .faq {
+            padding: 7rem 2rem;
+            background: linear-gradient(180deg, #faf9f7 0%, var(--creme) 100%);
         }
 
         .faq-container {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid var(--marrom-claro);
-            border-radius: 6px;
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--bege);
+            border-radius: 4px;
+            background: var(--branco);
+            transition: all 0.3s ease;
             overflow: hidden;
         }
 
+        .faq-item:hover {
+            border-color: var(--marrom-claro);
+            box-shadow: 0 6px 20px rgba(46, 31, 18, 0.06);
+        }
+
         .faq-pergunta {
-            padding: 20px;
-            background: linear-gradient(135deg, var(--marrom-escuro), var(--marrom-claro));
-            color: var(--branco);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1.8rem;
             user-select: none;
             transition: all 0.3s ease;
         }
 
         .faq-pergunta:hover {
-            background: linear-gradient(135deg, var(--marrom-claro), var(--marrom-escuro));
+            background: rgba(231, 207, 184, 0.08);
         }
 
-        .faq-pergunta h4 {
-            font-size: 18px;
+        .faq-pergunta span:first-child {
             font-weight: 600;
-            margin: 0;
+            font-size: 1.15rem;
+            color: var(--marrom-escuro);
         }
 
-        .faq-icon {
-            font-size: 24px;
+        .faq-pergunta span:last-child {
+            font-size: 1.6rem;
+            color: var(--marrom-claro);
             transition: transform 0.3s ease;
+            font-weight: 300;
         }
 
-        .faq-item.ativo .faq-icon {
-            transform: rotate(180deg);
+        .faq-item.ativo .faq-pergunta span:last-child {
+            transform: rotate(45deg);
         }
 
         .faq-resposta {
-            padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.3s ease;
-            background-color: var(--creme);
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--cinza);
+            line-height: 1.85;
+            font-size: 1.05rem;
         }
 
         .faq-item.ativo .faq-resposta {
-            padding: 20px;
             max-height: 500px;
+            padding: 0 1.8rem 1.8rem 1.8rem;
         }
 
-        .faq-resposta p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        /* SEÇÃO CTA FINAL */
-        .secao-cta-final {
-            background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom-claro) 100%);
+        /* CTA FINAL */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--vinho) 100%);
             color: var(--branco);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .secao-cta-final h2 {
-            color: var(--branco);
-            font-size: 40px;
-            margin-bottom: 20px;
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .secao-cta-final p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.95;
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -0.5px;
         }
 
-        .cta-button-grande {
-            background-color: var(--creme);
+        .final-cta p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.85;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-primary-white {
+            padding: 1.2rem 3.5rem;
+            background: var(--branco);
             color: var(--marrom-escuro);
             border: none;
-            padding: 16px 40px;
-            border-radius: 6px;
+            border-radius: 3px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.4px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .cta-button-grande:hover {
-            background-color: var(--branco);
-            transform: scale(1.05);
+        .btn-primary-white:hover {
+            background: var(--bege);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
         }
 
         /* FOOTER */
         footer {
-            background-color: var(--marrom-escuro);
+            background: var(--marrom-escuro);
             color: var(--branco);
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 30px 40px;
-            font-size: 14px;
+            font-size: 0.85rem;
+            opacity: 0.75;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(20, 20, 20, 0.75);
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.ativo {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--branco);
+            padding: 3.5rem;
+            border-radius: 6px;
+            max-width: 520px;
+            width: 95%;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.8rem;
+            right: 1.8rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--cinza);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: var(--marrom-escuro);
+            transform: rotate(90deg);
+        }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--marrom-escuro);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--marrom-escuro);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--bege);
+            border-radius: 3px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            background: var(--creme);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--marrom-claro);
+            background: var(--branco);
+            box-shadow: 0 0 0 4px rgba(115, 78, 49, 0.08);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--marrom-escuro);
+            color: var(--branco);
+            padding: 1.1rem;
+            border: none;
+            border-radius: 3px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 1.5rem;
+        }
+
+        .form-submit:hover {
+            background: var(--marrom-claro);
+            transform: translateY(-2px);
         }
 
         /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .logo-section {
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .logo-section img {
-                height: 100px;
-            }
-
-            .header-title {
-                font-size: 18px;
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 3rem 2rem;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 3.5rem;
             }
 
-            .hero p {
-                font-size: 18px;
-            }
-
-            section h2 {
-                font-size: 28px;
-            }
-
-            .quem-sou-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .transformacao-grid {
+            .timeline-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 60px 20px;
+            .timeline::before {
+                left: 20px;
             }
 
-            .solucao-numero {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
+            .beneficios-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .secao-cta-final h2 {
-                font-size: 28px;
+            .dor-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .quem-sou-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.65rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .logo-image {
+                height: 40px;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 2.5rem 1.5rem;
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.8rem;
+            }
+
+            .hero-features {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                margin: 1.8rem 0;
+                padding: 1.5rem 0;
+            }
+
+            .feature-item {
+                font-size: 0.95rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                padding: 0.9rem 2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .como-funciona {
+                padding: 4rem 1.5rem;
+            }
+
+            .dor {
+                padding: 4rem 1.5rem;
+            }
+
+            .dor-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .quem-sou {
+                padding: 4rem 1.5rem;
+            }
+
+            .quem-sou-grid {
+                gap: 2rem;
+            }
+
+            .quem-sou-texto h2 {
+                font-size: 1.9rem;
+            }
+
+            .quem-sou-texto p {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .beneficios {
+                padding: 4rem 1.5rem;
+            }
+
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .faq {
+                padding: 4rem 1.5rem;
+            }
+
+            .final-cta {
+                padding: 4rem 1.5rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta p {
+                font-size: 1rem;
+            }
+
+            .modal-content {
+                padding: 2.5rem;
+                max-width: 95%;
+            }
+
+            .modal h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .feature-item {
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .timeline-numero {
+                font-size: 2.2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .dor-icon {
+                font-size: 2.2rem;
+            }
+
+            .beneficio-icon {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- HEADER -->
     <header>
         <div class="header-content">
-            <div class="logo-section">
-                <img src="https://imgur.com/csmg7AA.jpg" alt="Logo Gestão Escolar de Alta Performance">
-                <div class="header-title">
-                    GESTÃO ESCOLAR
-                    <span>DE ALTA PERFORMANCE</span>
+            <div class="logo-container">
+                <img src="https://imgur.com/csmg7AA.jpg" alt="Logo" class="logo-image">
+                <div class="logo-text-wrapper">
+                    <div class="logo">GESTÃO ESCOLAR</div>
+                    <div class="logo-subtitle">DE ALTA PERFORMANCE</div>
                 </div>
             </div>
-            <a href="https://wa.me/5511999999999" class="cta-button">Conversar no WhatsApp</a>
+            <nav>
+                <a href="#como-funciona">Como Funciona</a>
+                <a href="#desafios">Desafios</a>
+                <a href="#quem-sou">Sobre</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#faq">FAQ</a>
+            </nav>
         </div>
     </header>
 
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Transforme Sua Escola em um Centro de Excelência</h1>
-            <p>Estratégias comprovadas de gestão pedagógica que aumentam resultados, engajamento de alunos e reconhecimento institucional</p>
-            <a href="https://wa.me/5511999999999" class="cta-button">Agende uma Consulta Gratuita</a>
+            <h1>Gestão Escolar de Alta Performance</h1>
+            <p class="hero-subtitle">Acompanhamento estratégico mensal para escolas particulares que desejam organizar processos, estruturar a gestão e crescer com segurança.</p>
+
+            <div class="hero-features">
+                <div class="feature-item">Reuniões estratégicas semanais</div>
+                <div class="feature-item">Gestão financeira</div>
+                <div class="feature-item">Gestão administrativa</div>
+                <div class="feature-item">Gestão documental</div>
+                <div class="feature-item">Gestão de equipe</div>
+                <div class="feature-item">Suporte contínuo</div>
+            </div>
+
+            <div class="hero-proof">
+                <strong>A escola não precisa enfrentar tudo sozinha.</strong>
+            </div>
+
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="abrirModal()">Agendar Diagnóstico Estratégico</button>
+                <button class="btn-secondary" onclick="document.getElementById('como-funciona').scrollIntoView()">Conhecer o Programa</button>
+            </div>
+        </div>
+
+        <div class="hero-foto">
+            <img src="https://imgur.com/4dv92Gt.jpg" alt="Caroline Bruna - Consultora de Gestão Escolar Premium">
         </div>
     </section>
 
-    <!-- SEÇÃO DOR -->
-    <section class="secao-dor">
-        <h2>Os Desafios que Sua Escola Enfrenta</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <div class="card-icon">😰</div>
-                <h3>Falta de Direcionamento Estratégico</h3>
-                <p>Sem uma visão clara de onde chegar, a escola funciona de forma reativa, perdendo oportunidades de crescimento</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Resultados Inconsistentes</h3>
-                <p>Desempenho acadêmico variável, indisciplina e falta de objetivos mensuráveis</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🤝</div>
-                <h3>Equipe Desmotivada</h3>
-                <p>Professores e funcionários sem clareza de propósito, gerando rotatividade e baixo comprometimento</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">💰</div>
-                <h3>Gestão Financeira Frágil</h3>
-                <p>Recursos desperdiçados, falta de planejamento orçamentário e pressão por resultados imediatos</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">👨‍👩‍👧</div>
-                <h3>Comunicação com Famílias Deficiente</h3>
-                <p>Pais desconectados do processo escolar, gerando reclamações e perda de confiança</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3>Sem Diferenciais Competitivos</h3>
-                <p>Escola padrão no mercado, dificuldade para atrair alunos e cobrar por qualidade premium</p>
-            </div>
-        </div>
-    </section>
+    <!-- COMO FUNCIONA -->
+    <section class="como-funciona" id="como-funciona">
+        <div class="section-container">
+            <h2 class="section-title">Como Funciona o Acompanhamento Mensal</h2>
+            <p class="section-subtitle">Você não recebe apenas orientações. Sua escola recebe acompanhamento contínuo e direcionamento estratégico.</p>
 
-    <!-- SEÇÃO SOLUÇÃO -->
-    <section class="secao-solucao">
-        <h2>Conheça Meus Serviços</h2>
-        <div class="solucao-grid">
-            <div class="solucao-item">
-                <div class="solucao-numero">1</div>
-                <h3>Diagnóstico Estratégico</h3>
-                <p>Avaliação completa da escola identificando pontos fortes, fragilidades e oportunidades de melhoria com dados reais</p>
-            </div>
-            <div class="solucao-item">
-                <div class="solucao-numero">2</div>
-                <h3>Planejamento Pedagógico</h3>
-                <p>Desenvolvimento de currículo inovador, propostas pedagógicas e metodologias que atraem alunos de alta performance</p>
-            </div>
-            <div class="solucao-item">
-                <div class="solucao-numero">3</div>
-                <h3>Gestão de Pessoas</h3>
-                <p>Fortalecimento da equipe através de capacitação, liderança estratégica e clima organizacional positivo</p>
-            </div>
-            <div class="solucao-item">
-                <div class="solucao-numero">4</div>
-                <h3>Implementação de Resultados</h3>
-                <p>Execução de melhorias com acompanhamento contínuo, ajustes e métricas que comprovam ROI</p>
-            </div>
-            <div class="solucao-item">
-                <div class="solucao-numero">5</div>
-                <h3>Comunicação e Marketing</h3>
-                <p>Estratégia de posicionamento, reputação institucional e atração de alunos alinhados com seus valores</p>
-            </div>
-            <div class="solucao-item">
-                <div class="solucao-numero">6</div>
-                <h3>Sustentabilidade Financeira</h3>
-                <p>Modelo de receita diversificado, otimização de custos e planejamento financeiro de longo prazo</p>
-            </div>
-        </div>
-    </section>
+            <div class="timeline">
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <div class="timeline-numero">1</div>
+                        <h3>Diagnóstico Contínuo</h3>
+                        <p>Análise permanente dos 4 pilares críticos: gestão, financeiro, administrativo e equipe. Você sabe exatamente onde está.</p>
+                    </div>
 
-    <!-- SEÇÃO QUEM EU SOU -->
-    <section class="secao-quem-sou">
-        <h2>Quem Está Por Trás</h2>
-        <div class="quem-sou-content">
-            <div class="quem-sou-foto">
-                <img src="https://imgur.com/4dv92Gt.jpg" alt="Carol - Consultora Pedagógica">
-            </div>
-            <div class="quem-sou-texto">
-                <h3>Olá! Eu sou Carol</h3>
-                <p>Sou consultora pedagógica escolar com mais de 15 anos de experiência transformando instituições educacionais em centros de excelência. Trabalho com escolas particulares de diferentes tamanhos, ajudando-as a alcançar seus objetivos estratégicos e criar diferenciais no mercado.</p>
-                <p>Minha metodologia combina análise estratégica, inovação pedagógica e gestão de pessoas para gerar resultados mensuráveis que impactam positivamente no crescimento da instituição, na satisfação de alunos e famílias, e na lucratividade.</p>
-                <p>Acredito que toda escola tem potencial extraordinário - basta ter direcionamento estratégico, equipe motivada e foco em resultados.</p>
-                <div class="credenciais">
-                    <p>✓ Especialista em Gestão Educacional</p>
-                    <p>✓ Certificada em Metodologias Ativas</p>
-                    <p>✓ Consultora de mais de 50 escolas</p>
-                    <p>✓ Palestrante em congressos educacionais</p>
+                    <div class="timeline-item">
+                        <div class="timeline-numero">2</div>
+                        <h3>Reuniões Estratégicas Semanais</h3>
+                        <p>Encontros focados em decisões que impactam. Não é consultoria — é parceria estratégica no seu dia a dia.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-numero">3</div>
+                        <h3>Organização Administrativa</h3>
+                        <p>Implementação de processos, documentação, sistemas. Sua escola passa a funcionar com clareza operacional.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-numero">4</div>
+                        <h3>Gestão Financeira</h3>
+                        <p>Visibilidade total sobre custos, receitas, lucro real. Você sabe exatamente quanto custa e quanto lucra.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-numero">5</div>
+                        <h3>Desenvolvimento da Equipe</h3>
+                        <p>Alinhamento, capacitação e estruturação. Sua equipe aprende a funcionar de forma estratégica e segura.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-numero">6</div>
+                        <h3>Plano Mensal de Crescimento</h3>
+                        <p>Roadmap claro com objetivos, responsabilidades e métricas. Você cresce de forma planejada e estruturada.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO BENEFÍCIOS -->
-    <section class="secao-beneficios">
-        <h2>Resultados que Nossas Escolas Parceiras Alcançam</h2>
-        <div class="beneficios-grid">
-            <div class="beneficio-item">
-                <h4>📈 +35% em Resultados Acadêmicos</h4>
-                <p>Alunos com melhor desempenho em avaliações internas e externas em média 6 meses</p>
+    <!-- DESAFIOS -->
+    <section class="dor" id="desafios">
+        <h2 class="section-title">Os Desafios Reais que Sua Escola Enfrenta</h2>
+
+        <div class="dor-grid">
+            <div class="dor-card">
+                <div class="dor-icon">👥</div>
+                <h3>Equipe Desalinhada</h3>
+                <p>Cada um faz de um jeito. Faltam diretrizes claras e responsabilidades bem definidas.</p>
             </div>
-            <div class="beneficio-item">
-                <h4>👥 +45% em Satisfação de Pais</h4>
-                <p>Famílias mais engajadas, satisfeitas e retencão de alunos aumentada significativamente</p>
+
+            <div class="dor-card">
+                <div class="dor-icon">🔄</div>
+                <h3>Processos Inexistentes</h3>
+                <p>Tudo é feito de forma improvisada. Não há rotinas ou documentação dos procedimentos.</p>
             </div>
-            <div class="beneficio-item">
-                <h4>😊 +50% em Clima Escolar</h4>
-                <p>Ambiente mais positivo, professores motivados e redução de conflitos disciplinares</p>
+
+            <div class="dor-card">
+                <div class="dor-icon">⚡</div>
+                <h3>Apagando Incêndios</h3>
+                <p>Você passa o dia resolvendo problemas em vez de planejar o crescimento.</p>
             </div>
-            <div class="beneficio-item">
-                <h4>💰 +40% em Lucratividade</h4>
-                <p>Aumento de receitas através de novos alunos, mensalidades premium e eficiência operacional</p>
+
+            <div class="dor-card">
+                <div class="dor-icon">📊</div>
+                <h3>Financeiro Opaco</h3>
+                <p>Você não sabe exatamente quanto custa manter a escola aberta e quanto lucra.</p>
             </div>
-            <div class="beneficio-item">
-                <h4>🎓 +60% em Engagement de Alunos</h4>
-                <p>Participação aumentada em atividades extracurriculares e sentimento de pertencimento</p>
+
+            <div class="dor-card">
+                <div class="dor-icon">📁</div>
+                <h3>Documentação Perdida</h3>
+                <p>Arquivos espalhados, sem organização. Risco legal crescente a cada dia.</p>
             </div>
-            <div class="beneficio-item">
-                <h4>🏆 Reconhecimento no Mercado</h4>
-                <p>Escola conhecida como referência de qualidade, atraindo melhores alunos e famílias</p>
-            </div>
-            <div class="beneficio-item">
-                <h4>📱 +80% em Demanda de Matrículas</h4>
-                <p>Fila de espera para matrículas através de reputação fortalecida e marketing efetivo</p>
-            </div>
-            <div class="beneficio-item">
-                <h4>⚡ Transformação em 12 Meses</h4>
-                <p>Implementação estruturada com resultados visíveis desde os primeiros meses de trabalho</p>
+
+            <div class="dor-card">
+                <div class="dor-icon">📈</div>
+                <h3>Crescimento Desorganizado</h3>
+                <p>Mais alunos sem estrutura é mais problemas, não mais lucro.</p>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO TRANSFORMAÇÃO -->
-    <section class="secao-transformacao">
-        <h2>A Jornada de Transformação</h2>
-        <div class="transformacao-grid">
-            <div class="transformacao-coluna antes">
-                <h3>❌ ANTES - Sem Estratégia</h3>
-                <div class="transformacao-item">
-                    <span>❌</span>
-                    <div>Gestão reativa, sem planejamento claro</div>
+    <!-- QUEM SOU -->
+    <section class="quem-sou" id="quem-sou">
+        <div class="quem-sou-container">
+            <div class="quem-sou-grid">
+                <div class="quem-sou-foto">
+                    <img src="https://imgur.com/4dv92Gt.jpg" alt="Caroline Bruna">
                 </div>
-                <div class="transformacao-item">
-                    <span>❌</span>
-                    <div>Equipe desmotivada e sem direcionamento</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>❌</span>
-                    <div>Resultados inconsistentes e imprevisíveis</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>❌</span>
-                    <div>Comunicação deficiente com pais e alunos</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>❌</span>
-                    <div>Financeiro desorganizado e desperdício de recursos</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>❌</span>
-                    <div>Perda de alunos para concorrentes</div>
-                </div>
-            </div>
-            <div class="transformacao-coluna depois">
-                <h3>✅ DEPOIS - Com Alta Performance</h3>
-                <div class="transformacao-item">
-                    <span>✅</span>
-                    <div>Estratégia clara com metas mensuráveis</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>✅</span>
-                    <div>Equipe motivada e alinhada com objetivos</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>✅</span>
-                    <div>Resultados consistentes e crescentes</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>✅</span>
-                    <div>Comunicação efetiva e relacionamento forte</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>✅</span>
-                    <div>Financeiro saudável e receita previsível</div>
-                </div>
-                <div class="transformacao-item">
-                    <span>✅</span>
-                    <div>Fila de espera para matrículas</div>
+
+                <div class="quem-sou-texto">
+                    <h2>Quem Está Por Trás</h2>
+                    <p>Sou Caroline.</p>
+                    <p>Ao longo da minha atuação dentro de escolas particulares percebi algo: a maioria das escolas não precisa de mais teoria. Precisa de organização, clareza e direção.</p>
+                    <p>Meu trabalho é atuar de forma estratégica olhando a escola inteira: gestão, financeiro, processos, documentação, equipe e crescimento.</p>
+
+                    <div class="expertise-list">
+                        <div class="expertise-item">Credenciamento e Pós-Credenciamento</div>
+                        <div class="expertise-item">Gestão Financeira Escolar</div>
+                        <div class="expertise-item">Gestão Administrativa</div>
+                        <div class="expertise-item">Gestão de Equipe</div>
+                        <div class="expertise-item">Documentação e Escrituração</div>
+                        <div class="expertise-item">Processos Internos</div>
+                        <div class="expertise-item">Estratégias de Crescimento</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO FAQ -->
-    <section class="secao-faq">
-        <h2>Dúvidas Frequentes</h2>
+    <!-- BENEFÍCIOS -->
+    <section class="beneficios" id="beneficios">
+        <div class="section-container">
+            <h2 class="section-title">O Que Sua Escola Recebe</h2>
+
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">📋</div>
+                    <h3>Diagnóstico Contínuo</h3>
+                    <p>Análise permanente dos 4 pilares da gestão estratégica</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">🎯</div>
+                    <h3>Reuniões Semanais</h3>
+                    <p>Encontros focados em decisões que impactam sua escola</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">📊</div>
+                    <h3>Gestão Financeira</h3>
+                    <p>Clareza total sobre custos, lucro real e alavancagem</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">📁</div>
+                    <h3>Gestão Documental</h3>
+                    <p>Arquivos organizados, conformidade legal garantida</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">🔧</div>
+                    <h3>Organização Administrativa</h3>
+                    <p>Processos, documentação e sistemas estruturados</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">👥</div>
+                    <h3>Gestão de Equipe</h3>
+                    <p>Alinhamento, capacitação e desenvolvimento estruturado</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">💬</div>
+                    <h3>Plantão Estratégico</h3>
+                    <p>Suporte contínuo para dúvidas e desafios do dia a dia</p>
+                </div>
+
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">📈</div>
+                    <h3>Plano de Crescimento</h3>
+                    <p>Roadmap mensal claro com objetivos e métricas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
         <div class="faq-container">
+            <h2 class="section-title">Dúvidas Comuns</h2>
+
             <div class="faq-item">
-                <div class="faq-pergunta">
-                    <h4>Como funciona a consultoria?</h4>
-                    <span class="faq-icon">▼</span>
+                <div class="faq-pergunta" onclick="toggleFaq(this)">
+                    <span>Qual é a diferença entre isso e consultoria comum?</span>
+                    <span>+</span>
                 </div>
                 <div class="faq-resposta">
-                    <p>A consultoria é estruturada em 4 fases: (1) Diagnóstico profundo da escola; (2) Planejamento estratégico detalhado; (3) Implementação acompanhada com reuniões periódicas; (4) Avaliação de resultados e ajustes. Todo o processo é personalizado conforme a realidade da sua escola.</p>
+                    Consultoria comum é pontual. Você contrata para um problema específico e depois volta ao caos. Isso é acompanhamento estratégico contínuo. Sou parceira permanente da sua escola, garantindo que tudo funcione de forma estruturada, constante e em crescimento.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-pergunta">
-                    <h4>Quanto tempo leva para ver resultados?</h4>
-                    <span class="faq-icon">▼</span>
+                <div class="faq-pergunta" onclick="toggleFaq(this)">
+                    <span>Quanto tempo até ver resultados?</span>
+                    <span>+</span>
                 </div>
                 <div class="faq-resposta">
-                    <p>Os primeiros resultados aparecem entre 2-3 meses (clima escolar, motivação da equipe). Resultados acadêmicos e financeiros mais robustos aparecem entre 6-12 meses. Tudo depende do ponto de partida e do compromisso da equipe em implementar as mudanças.</p>
+                    Nas primeiras 2 semanas você já vê clareza. No primeiro mês, processos começam a funcionar. No terceiro mês, transformação visível. Mas o verdadeiro valor está no longo prazo — crescimento contínuo e estruturado.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-pergunta">
-                    <h4>Funciona para escolas de qualquer tamanho?</h4>
-                    <span class="faq-icon">▼</span>
+                <div class="faq-pergunta" onclick="toggleFaq(this)">
+                    <span>Funciona para escolas de qualquer tamanho?</span>
+                    <span>+</span>
                 </div>
                 <div class="faq-resposta">
-                    <p>Sim! Trabalho com escolas pequenas (até 200 alunos), médias e grandes (acima de 1000 alunos). A metodologia é adaptada conforme o contexto, tamanho, estrutura e desafios específicos de cada instituição.</p>
+                    Funciona para escolas particulares de todos os portes. O método se adapta. O que importa é estar aberta a reorganização e disposição de crescer de forma estratégica.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-pergunta">
-                    <h4>Qual é o investimento?</h4>
-                    <span class="faq-icon">▼</span>
+                <div class="faq-pergunta" onclick="toggleFaq(this)">
+                    <span>Como é feito o acompanhamento?</span>
+                    <span>+</span>
                 </div>
                 <div class="faq-resposta">
-                    <p>Os valores variam conforme o escopo do trabalho, duração da consultoria e tamanho da escola. Faço uma avaliação gratuita inicial para entender sua situação e apresentar uma proposta customizada. Muitos diretores percebem que o ROI da consultoria é recuperado em poucos meses.</p>
+                    Reuniões estratégicas semanais, análise contínua de seus 4 pilares, plantão via WhatsApp para dúvidas, implementação de processos, documentação e planos de crescimento mensais. Você não está sozinha.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-pergunta">
-                    <h4>Posso solicitar uma consulta antes de contratar?</h4>
-                    <span class="faq-icon">▼</span>
+                <div class="faq-pergunta" onclick="toggleFaq(this)">
+                    <span>Como agendo o diagnóstico estratégico?</span>
+                    <span>+</span>
                 </div>
                 <div class="faq-resposta">
-                    <p>Com certeza! Ofereço uma consulta gratuita inicial (30-45 minutos) onde a gente conversa sobre seus desafios, objetivos e como posso ajudar. Sem compromisso! Você conhecerá meu trabalho e perceberá se é uma boa parceria.</p>
+                    Clique em "Agendar Diagnóstico Estratégico", preencha o formulário rápido com informações da sua escola. Responderei em 24 horas com disponibilidade de datas e próximos passos.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO CTA FINAL -->
-    <section class="secao-cta-final">
-        <h2>Pronto para Transformar Sua Escola?</h2>
-        <p>Agende sua consulta gratuita e descubra como ajudar sua escola a alcançar alta performance</p>
-        <a href="https://wa.me/5511999999999" class="cta-button-grande">Iniciar Agora via WhatsApp</a>
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <h2>Sua escola não precisa crescer sozinha.</h2>
+        <p>Tenha acompanhamento estratégico contínuo e transforme a gestão da sua escola em um diferencial competitivo.</p>
+        <button class="btn-primary-white" onclick="abrirModal()">Quero Estruturar Minha Escola</button>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Gestão Escolar de Alta Performance. Todos os direitos reservados. | Consultoria Pedagógica Premium</p>
+        <p>&copy; 2026 Gestão Escolar de Alta Performance | Acompanhamento Estratégico para Escolas Particulares Brasileiras</p>
     </footer>
 
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="fecharModal()">✕</button>
+            <h2>Agendar Diagnóstico Estratégico</h2>
+
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="escola">Sua Escola</label>
+                    <input type="text" id="escola" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp</label>
+                    <input type="tel" id="whatsapp" required placeholder="(81) 99642-8848">
+                </div>
+
+                <div class="form-group">
+                    <label for="alunos">Quantidade de Alunos</label>
+                    <input type="number" id="alunos" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="desafio">Qual é seu maior desafio agora?</label>
+                    <textarea id="desafio" required rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Enviar para WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        // FAQ ACCORDION
-        document.querySelectorAll('.faq-pergunta').forEach(pergunta => {
-            pergunta.addEventListener('click', function() {
-                const item = this.parentElement;
-                item.classList.toggle('ativo');
+        function abrirModal() {
+            document.getElementById('modal').classList.add('ativo');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModal() {
+            document.getElementById('modal').classList.remove('ativo');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const escola = document.getElementById('escola').value;
+            const email = document.getElementById('email').value;
+            const whatsapp = document.getElementById('whatsapp').value.replace(/\D/g, '');
+            const alunos = document.getElementById('alunos').value;
+            const desafio = document.getElementById('desafio').value;
+
+            const mensagem = `Olá Caroline! Meu nome é ${nome}, sou de ${escola} (${alunos} alunos). Gostaria de agendar o diagnóstico estratégico. Meu maior desafio agora é: ${desafio}. Meu email: ${email}`;
+
+            const whatsappUrl = `https://wa.me/5581996428848?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            fecharModal();
+            document.querySelector('form').reset();
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.closest('.faq-item');
+            const allFaqItems = document.querySelectorAll('.faq-item');
+
+            allFaqItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('ativo');
+                }
             });
-        });
+
+            faqItem.classList.toggle('ativo');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                fecharModal();
+            }
+        }
     </script>
+
 </body>
 </html>
